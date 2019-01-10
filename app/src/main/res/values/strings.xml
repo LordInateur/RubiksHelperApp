@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RubiksHelperApp</string>
+    <string name="bloc_de_pub">Bloc de pub</string>
+    <string name="nouvelle_resolution">Nouvelle résolution</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choix_resolution">Quel mode de résolution lancer ?</string>
+    <string name="apprendre">Apprendre</string>
+    <string name="efficient">Efficient</string>
 </resources>
