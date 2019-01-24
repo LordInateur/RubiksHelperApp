@@ -58,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         newResolution.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ChoiceResolutionActivity.class);
+                Intent intent = new Intent(context, OpenCVTest.class);
 
                 startActivity(intent);
 

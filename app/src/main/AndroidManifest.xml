@@ -2,6 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ovh.rubikssolver.rubikshelperapp">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +36,10 @@
         <activity
             android:name=".ChoiceResolutionActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SolverActivity"></activity>
+        <activity android:name=".SolverActivity" />
+        <activity android:name=".OpenCVTest">
+
+        </activity>
     </application>
 
 </manifest>
