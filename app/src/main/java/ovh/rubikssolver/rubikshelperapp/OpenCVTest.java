@@ -1,4 +1,5 @@
 package ovh.rubikssolver.rubikshelperapp;
+import java.lang.reflect.Method;
 import java.util.List;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -17,6 +18,7 @@ import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.imgproc.Imgproc;
 
 import android.app.Activity;
+import android.graphics.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -75,8 +77,9 @@ public class OpenCVTest extends Activity implements OnTouchListener, CvCameraVie
 
         setContentView(R.layout.activity_opencv_test);
 
-        mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.color_blob_detection_activity_surface_view);
+        mOpenCvCameraView = findViewById(R.id.color_blob_detection_activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+        mOpenCvCameraView.setCameraIndex(1);
         mOpenCvCameraView.setCvCameraViewListener(this);
     }
 
@@ -94,7 +97,7 @@ public class OpenCVTest extends Activity implements OnTouchListener, CvCameraVie
         super.onResume();
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_4_0, this, mLoaderCallback);
         } else {
             Log.d(TAG, "OpenCV library found inside package. Using it!");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
